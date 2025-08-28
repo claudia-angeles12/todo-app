@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Interactiva - TaskFlow</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">TaskFlow</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="demo.html" class="nav-link active">Demo</a>
+                <a href="features.html" class="nav-link">Características</a>
+                <a href="documentation.html" class="nav-link">Documentación</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="demo-container">
+        <div class="demo-notice">
+            <p>Esta es una demostración interactiva que simula la funcionalidad completa usando LocalStorage. Los datos se guardan localmente en tu navegador.</p>
+        </div>
+
+        <div class="demo-app">
+            <aside class="demo-sidebar">
+                <div class="sidebar-header">
+                    <h2>TaskFlow</h2>
+                    <p>Gestión de tareas</p>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-view="dashboard">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="tasks">
+                        <span class="nav-icon">✅</span>
+                        <span class="nav-text">Todas las tareas</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="add">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Nueva tarea</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="filters">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Filtros</span>
+                    </a>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">U</div>
+                        <div class="user-info">
+                            <span class="user-name">Usuario Demo</span>
+                            <span class="user-status">En línea</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="demo-main">
+                <header class="demo-header">
+                    <h1 id="view-title">Dashboard</h1>
+                    <div class="header-actions">
+                        <button class="btn-icon" id="notifications-btn">
+                            <span class="icon">🔔</span>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="btn-icon" id="theme-toggle">
+                            <span class="icon">🌙</span>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="demo-content">
+                    <!-- Vista de Dashboard -->
+                    <div id="view-dashboard" class="view active">
+                        <div class="stats-grid" id="stats-container">
+                            <!-- Las estadísticas se cargarán dinámicamente -->
+                        </div>
+
+                        <div class="recent-tasks">
+                            <h2>Tareas recientes</h2>
+                            <div class="task-list" id="recent-tasks-container">
+                                <!-- Las tareas recientes se cargarán dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vista de Todas las Tareas -->
+                    <div id="view-tasks" class="view">
+                        <div class="view-header">
+                            <h2>Todas las tareas</h2>
+                            <button class="btn btn-primary" id="add-task-btn">Nueva Tarea</button>
+                        </div>
+                        <div class="task-filters">
+                            <input type="text" id="task-search" placeholder="Buscar tareas..." class="search-input">
+                            <div class="filter-tags" id="active-filters">
+                                <!-- Filtros activos se mostrarán aquí -->
+                            </div>
+                        </div>
+                        <div class="task-list" id="all-tasks-container">
+                            <!-- Las tareas se cargarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Vista de Añadir/Editar Tarea -->
+                    <div id="view-add" class="view">
+                        <div class="form-container">
+                            <h2 id="form-title">Crear nueva tarea</h2>
+                            <form id="task-form">
+                                <input type="hidden" id="task-id">
+                                <div class="form-group">
+                                    <label for="task-title">Título *</label>
+                                    <input type="text" id="task-title" required placeholder="¿Qué necesitas hacer?">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="task-description">Descripción</label>
+                                    <textarea id="task-description" rows="3" placeholder="Detalles de la tarea..."></textarea>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="task-due-date">Fecha límite</label>
+                                        <input type="date" id="task-due-date">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="task-priority">Prioridad</label>
+                                        <select id="task-priority">
+                                            <option value="low">Baja</option>
+                                            <option value="medium" selected>Media</option>
+                                            <option value="high">Alta</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="task-status">Estado</label>
+                                    <select id="task-status">
+                                        <option value="pending">Pendiente</option>
+                                        <option value="in-progress">En progreso</option>
+                                        <option value="completed">Completada</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" id="cancel-form" class="btn btn-secondary">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Vista de Filtros -->
+                    <div id="view-filters" class="view">
+                        <div class="filters-container">
+                            <h2>Filtrar tareas</h2>
+                            
+                            <div class="filter-options">
+                                <div class="filter-group">
+                                    <h3>Estado</h3>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="status" value="pending" checked> Pendientes
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="status" value="in-progress" checked> En progreso
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="status" value="completed" checked> Completadas
+                                    </label>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <h3>Prioridad</h3>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="priority" value="high" checked> Alta
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="priority" value="medium" checked> Media
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="priority" value="low" checked> Baja
+                                    </label>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <h3>Fecha</h3>
+                                    <div class="date-filters">
+                                        <label class="filter-radio">
+                                            <input type="radio" name="date-filter" value="all" checked> Todas
+                                        </label>
+                                        <label class="filter-radio">
+                                            <input type="radio" name="date-filter" value="today"> Hoy
+                                        </label>
+                                        <label class="filter-radio">
+                                            <input type="radio" name="date-filter" value="week"> Esta semana
+                                        </label>
+                                        <label class="filter-radio">
+                                            <input type="radio" name="date-filter" value="month"> Este mes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-actions">
+                                <button type="button" id="clear-filters" class="btn btn-secondary">Limpiar</button>
+                                <button type="button" id="apply-filters" class="btn btn-primary">Aplicar Filtros</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Confirmar acción</h3>
+            <p id="modal-message">¿Estás seguro de que quieres realizar esta acción?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="btn btn-secondary">Cancelar</button>
+                <button id="modal-confirm" class="btn btn-danger">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de notificación -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TaskFlow</h3>
+                <p>Demo interactiva del gestor de tareas.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Nota importante</h4>
+                <p>Esta demo utiliza LocalStorage para simular la funcionalidad. Los datos se almacenan localmente en tu navegador.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ver proyecto real</h4>
+                <p>El proyecto completo con backend PHP y MySQL está disponible en GitHub.</p>
+                <a href="https://github.com/tu-usuario/taskflow" class="footer-link">Ver código fuente</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Todo-App. Diseñado y desarrollado con ♥ por Claudia Angeles.</p>
+        </div>
+    </footer>
+
+    <script src="js/demo.js"></script>
+</body>
+</html>

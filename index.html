@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-App - Gestor de Tareas Minimalista</title>
+    <meta name="description" content="Un gestor de tareas elegante y minimalista desarrollado con PHP, MySQL y JavaScript. Diseño premium con enfoque en experiencia de usuario.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">TaskFlow</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="features.html" class="nav-link">Características</a>
+                <a href="documentation.html" class="nav-link">Documentación</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Organiza tu trabajo con elegancia</h1>
+                <p class="hero-description">TaskFlow es un gestor de tareas minimalista con un diseño centrado en la experiencia de usuario y las mejores prácticas de desarrollo.</p>
+                <div class="hero-actions">
+                    <a href="demo.html" class="btn btn-primary">Probar Demo</a>
+                    <a href="#features" class="btn btn-secondary">Ver Características</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="mockup-browser">
+                    <div class="mockup-browser-header">
+                        <div class="mockup-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="mockup-content">
+                        <img src="assets/images/screenshot-dashboard.png" alt="Dashboard de TaskFlow" class="mockup-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>Diseñado para la productividad</h2>
+                <p>Características que hacen de TaskFlow una herramienta excepcional</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Interfaz Minimalista</h3>
+                    <p>Diseño limpio con amplio espacio en blanco que reduce la carga cognitiva y mejora el enfoque.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>CRUD Completo</h3>
+                    <p>Crear, leer, actualizar y eliminar tareas con una experiencia de usuario fluida e intuitiva.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Filtros Avanzados</h3>
+                    <p>Organiza tus tareas por prioridad, estado o fecha límite para mantener el control de tu trabajo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard Integrado</h3>
+                    <p>Visualiza tus métricas de productividad con estadísticas en tiempo real.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Autenticación Segura</h3>
+                    <p>Sistema de registro e inicio de sesión con hash de contraseñas y protección contra vulnerabilidades.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Diseño Responsivo</h3>
+                    <p>Experiencia optimizada para cualquier dispositivo, desde móviles hasta escritorios de alta resolución.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="technology">
+            <div class="section-header">
+                <h2>Tecnologías de Vanguardia</h2>
+                <p>Desarrollado con las mejores herramientas y prácticas del sector</p>
+            </div>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <div class="tech-logo">PHP</div>
+                    <span>Backend robusto con código bien estructurado</span>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-logo">MySQL</div>
+                    <span>Base de datos relacional con consultas preparadas</span>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-logo">JS</div>
+                    <span>Interactividad y validaciones del lado del cliente</span>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-logo">HTML5</div>
+                    <span>Marcado semántico y accesible</span>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-logo">CSS3</div>
+                    <span>Diseño moderno con flexbox y grid</span>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-logo">Security</div>
+                    <span>Protección contra XSS, SQL Injection y CSRF</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Listo para organizar tu workflow?</h2>
+                <p>Experimenta la simplicidad y elegancia de TaskFlow</p>
+                <a href="demo.html" class="btn btn-primary btn-large">Probar Demo Interactiva</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TaskFlow</h3>
+                <p>Un gestor de tareas minimalista con enfoque en la experiencia de usuario y buenas prácticas de desarrollo.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="documentation.html">Documentación</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Tecnologías</h4>
+                <ul>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>JavaScript</li>
+                    <li>HTML5 & CSS3</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>¿Interesado en colaborar o tienes preguntas?</p>
+                <a href="mailto:hola@taskflow.com" class="footer-link">hola@taskflow.com</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Todo-App. Diseñado y desarrollado con ♥ por Claudia Angeles.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

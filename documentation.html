@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - TaskFlow</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">TaskFlow</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="features.html" class="nav-link">Características</a>
+                <a href="documentation.html" class="nav-link active">Documentación</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="documentation-container">
+        <div class="hero-section">
+            <h1>Documentación de TaskFlow</h1>
+            <p>Guía completa para entender, instalar y utilizar TaskFlow en tu entorno.</p>
+        </div>
+
+        <div class="doc-content">
+            <aside class="doc-sidebar">
+                <h3>Contenido</h3>
+                <ul class="doc-nav">
+                    <li><a href="#introduction">Introducción</a></li>
+                    <li><a href="#installation">Instalación</a></li>
+                    <li><a href="#usage">Uso básico</a></li>
+                    <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="#customization">Personalización</a></li>
+                    <li><a href="#api">API Reference</a></li>
+                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                </ul>
+            </aside>
+
+            <div class="doc-main">
+                <section id="introduction" class="doc-section">
+                    <h2>Introducción</h2>
+                    <p>TaskFlow es una aplicación web para gestión de tareas construida con tecnologías frontend modernas (HTML5, CSS3, JavaScript) y que utiliza LocalStorage para persistencia de datos.</p>
+                    
+                    <h3>Tecnologías utilizadas</h3>
+                    <ul>
+                        <li><strong>HTML5</strong>: Estructura semántica y accesibilidad</li>
+                        <li><strong>CSS3</strong>: Flexbox, Grid, Variables CSS y diseño responsivo</li>
+                        <li><strong>JavaScript ES6+</strong>: Clases, módulos y LocalStorage API</li>
+                        <li><strong>LocalStorage</strong>: Persistencia de datos en el navegador</li>
+                    </ul>
+                </section>
+
+                <section id="installation" class="doc-section">
+                    <h2>Instalación</h2>
+                    <p>TaskFlow no requiere instalación compleja. Solo sigue estos pasos:</p>
+                    
+                    <div class="code-block">
+                        <pre><code># Clona el repositorio
+git clone https://github.com/tu-usuario/taskflow.git
+
+# Navega al directorio
+cd taskflow
+
+# Abre index.html en tu navegador
+# O utiliza un servidor local para mejor experiencia
+python -m http.server 8000</code></pre>
+                    </div>
+                    
+                    <h3>Requisitos</h3>
+                    <ul>
+                        <li>Navegador moderno (Chrome 70+, Firefox 65+, Safari 12+, Edge 79+)</li>
+                        <li>JavaScript habilitado</li>
+                        <li>Conexión a internet (solo para fuentes e iconos si se usan CDN)</li>
+                    </ul>
+                </section>
+
+                <section id="usage" class="doc-section">
+                    <h2>Uso básico</h2>
+                    <p>TaskFlow es intuitivo y fácil de usar. Aquí los conceptos básicos:</p>
+                    
+                    <h3>Crear una tarea</h3>
+                    <ol>
+                        <li>Haz clic en "Nueva Tarea" en el menú lateral</li>
+                        <li>Completa el formulario con los detalles de tu tarea</li>
+                        <li>Haz clic en "Guardar Tarea"</li>
+                    </ol>
+                    
+                    <h3>Gestionar tareas</h3>
+                    <p>Desde la vista de "Todas las tareas" puedes:</p>
+                    <ul>
+                        <li>Marcar tareas como completadas usando el checkbox</li>
+                        <li>Editar tareas haciendo clic en el icono de lápiz</li>
+                        <li>Eliminar tareas con el icono de papelera</li>
+                        <li>Buscar y filtrar tareas según tus necesidades</li>
+                    </ul>
+                    
+                    <div class="note">
+                        <strong>Nota:</strong> Todos los datos se guardan automáticamente en tu navegador.
+                    </div>
+                </section>
+
+                <section id="features" class="doc-section">
+                    <h2>Funcionalidades Detalladas</h2>
+                    
+                    <h3>Sistema de Filtrado</h3>
+                    <p>TaskFlow incluye un sistema de filtrado avanzado que permite:</p>
+                    <ul>
+                        <li>Filtrar por estado (pendiente, en progreso, completada)</li>
+                        <li>Filtrar por prioridad (alta, media, baja)</li>
+                        <li>Búsqueda por texto en título y descripción</li>
+                        <li>Filtrado por fecha (hoy, esta semana, este mes)</li>
+                    </ul>
+                    
+                    <h3>Vista Dashboard</h3>
+                    <p>El dashboard proporciona una visión general de tu productividad:</p>
+                    <ul>
+                        <li>Resumen de tareas totales, completadas y pendientes</li>
+                        <li>Gráficos de distribución por prioridad</li>
+                        <li>Tareas recientes y próximas a vencer</li>
+                    </ul>
+                </section>
+
+                <section id="customization" class="doc-section">
+                    <h2>Personalización</h2>
+                    <p>TaskFlow puede personalizarse fácilmente modificando las variables CSS:</p>
+                    
+                    <div class="code-block">
+                        <pre><code>:root {
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #93c5fd;
+    --secondary: #64748b;
+    /* ... más variables */
+}</code></pre>
+                    </div>
+                    
+                    <p>Puedes cambiar los colores, espaciados, bordes y más mediante estas variables.</p>
+                </section>
+
+                <section id="api" class="doc-section">
+                    <h2>API Reference</h2>
+                    <p>TaskFlow expone una API simple a través de la clase TaskManager:</p>
+                    
+                    <h3>Métodos principales</h3>
+                    <div class="method">
+                        <h4>constructor()</h4>
+                        <p>Inicializa el gestor de tareas y carga los datos existentes.</p>
+                    </div>
+                    
+                    <div class="method">
+                        <h4>saveTask()</h4>
+                        <p>Guarda una tarea nueva o actualiza una existente.</p>
+                    </div>
+                    
+                    <div class="method">
+                        <h4>deleteTask(id)</h4>
+                        <p>Elimina una tarea por su ID.</p>
+                    </div>
+                    
+                    <div class="method">
+                        <h4>getFilteredTasks()</h4>
+                        <p>Devuelve las tareas filtradas según los criterios actuales.</p>
+                    </div>
+                </section>
+
+                <section id="faq" class="doc-section">
+                    <h2>Preguntas Frecuentes</h2>
+                    
+                    <div class="faq-item">
+                        <h3>¿Dónde se almacenan mis tareas?</h3>
+                        <p>Tus tareas se almacenan localmente en tu navegador usando LocalStorage. Esto significa que tus datos permanecen en tu dispositivo.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>¿Puedo usar TaskFlow en múltiples dispositivos?</h3>
+                        <p>No directamente, ya que los datos se almacenan localmente. Sin embargo, puedes exportar tus tareas desde el código o implementar una sincronización con un backend.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>¿Cómo puedo contribuir al proyecto?</h3>
+                        <p>Puedes hacer fork del repositorio en GitHub, realizar tus mejoras y enviar un pull request. Toda contribución es bienvenida.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TaskFlow</h3>
+                <p>Gestión inteligente de tareas</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces rápidos</h4>
+                <a href="index.html" class="footer-link">Inicio</a>
+                <a href="demo.html" class="footer-link">Demo</a>
+                <a href="features.html" class="footer-link">Características</a>
+                <a href="documentation.html" class="footer-link">Documentación</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Proyecto</h4>
+                <p>TaskFlow es un proyecto de código abierto disponible en GitHub.</p>
+                <a href="https://github.com/tu-usuario/taskflow" class="footer-link">Ver en GitHub</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 TaskFlow. Diseñado y desarrollado con ♥ por Claudia Angeles.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
